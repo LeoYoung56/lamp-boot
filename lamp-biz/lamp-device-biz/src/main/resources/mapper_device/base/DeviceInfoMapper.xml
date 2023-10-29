@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.tangyh.lamp.device.dao.DeviceInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="top.tangyh.lamp.device.entity.DeviceInfo">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="created_by" jdbcType="BIGINT" property="createdBy"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="updated_by" jdbcType="BIGINT" property="updatedBy"/>
+        <result column="device_name" jdbcType="VARCHAR" property="deviceName"/>
+        <result column="device_type" jdbcType="VARCHAR" property="deviceType"/>
+        <result column="location" jdbcType="VARCHAR" property="location"/>
+        <result column="status" jdbcType="VARCHAR" property="status"/>
+        <result column="description" jdbcType="LONGVARCHAR" property="description"/>
+        <result column="device_tenant_code" jdbcType="VARCHAR" property="deviceTenantCode"/>
+        <result column="ai_platform_id" jdbcType="BIGINT" property="aiPlatformId"/>
+        <result column="device_url" jdbcType="VARCHAR" property="deviceUrl"/>
+        <result column="protocol_info" jdbcType="VARCHAR" property="protocolInfo"/>
+        <result column="ai_sync_status" jdbcType="VARCHAR" property="aiSyncStatus"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,create_time,created_by,update_time,updated_by,
+        device_name, device_type, location, status, description, device_tenant_code, ai_platform_id, device_url, protocol_info, ai_sync_status
+    </sql>
+
+</mapper>

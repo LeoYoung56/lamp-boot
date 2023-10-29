@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.tangyh.lamp.task.dao.TaskDefinitionMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="top.tangyh.lamp.task.entity.TaskDefinition">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="created_by" jdbcType="BIGINT" property="createdBy"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="updated_by" jdbcType="BIGINT" property="updatedBy"/>
+        <result column="task_type" jdbcType="VARCHAR" property="taskType"/>
+        <result column="ai_module" jdbcType="VARCHAR" property="aiModule"/>
+        <result column="required_device_type" jdbcType="VARCHAR" property="requiredDeviceType"/>
+        <result column="min_device_count" jdbcType="INTEGER" property="minDeviceCount"/>
+        <result column="max_device_count" jdbcType="INTEGER" property="maxDeviceCount"/>
+        <result column="alert_definition" jdbcType="VARCHAR" property="alertDefinition"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,create_time,created_by,update_time,updated_by,
+        task_type, ai_module, required_device_type, min_device_count, max_device_count, alert_definition
+    </sql>
+
+</mapper>

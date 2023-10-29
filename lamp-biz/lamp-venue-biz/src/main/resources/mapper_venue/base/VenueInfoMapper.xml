@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.tangyh.lamp.venue.dao.VenueInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="top.tangyh.lamp.venue.entity.VenueInfo">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="created_by" jdbcType="BIGINT" property="createdBy"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="updated_by" jdbcType="BIGINT" property="updatedBy"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="venue_name" jdbcType="VARCHAR" property="venueName"/>
+        <result column="venue_type" jdbcType="VARCHAR" property="venueType"/>
+        <result column="venue_description" jdbcType="LONGVARCHAR" property="venueDescription"/>
+        <result column="venue_address" jdbcType="VARCHAR" property="venueAddress"/>
+        <result column="is_movable" jdbcType="VARCHAR" property="isMovable"/>
+        <result column="move_state" jdbcType="VARCHAR" property="moveState"/>
+        <result column="is_place" jdbcType="TINYINT" property="isPlace"/>
+        <result column="hierarchy_level" jdbcType="VARCHAR" property="hierarchyLevel"/>
+        <result column="latitude" jdbcType="DECIMAL" property="latitude"/>
+        <result column="longitude" jdbcType="DECIMAL" property="longitude"/>
+        <result column="contact_name" jdbcType="VARCHAR" property="contactName"/>
+        <result column="contact_phone" jdbcType="VARCHAR" property="contactPhone"/>
+        <result column="contact_email" jdbcType="VARCHAR" property="contactEmail"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,created_by,create_time,updated_by,update_time,
+        venue_name, venue_type, venue_description, venue_address, is_movable, move_state, is_place, hierarchy_level, latitude, longitude, contact_name, contact_phone, contact_email
+    </sql>
+
+</mapper>

@@ -36,7 +36,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/alarmInfo")
 @Api(value = "AlarmInfo", tags = "告警信息表")
-@PreAuth(replace = "alarm:alarmInfo:")
+@PreAuth(enabled = false, replace = "alarm:alarmInfo:")
 public class AlarmInfoController extends SuperController<AlarmInfoService, Long, AlarmInfo, AlarmInfoPageQuery, AlarmInfoSaveDTO, AlarmInfoUpdateDTO> {
 
     @Autowired

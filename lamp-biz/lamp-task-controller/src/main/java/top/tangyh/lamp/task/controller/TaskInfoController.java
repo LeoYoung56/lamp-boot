@@ -1,4 +1,4 @@
-package top.tangyh.lamp.alarm.controller;
+package top.tangyh.lamp.task.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.annotations.Api;
@@ -11,11 +11,11 @@ import top.tangyh.basic.annotation.security.PreAuth;
 import top.tangyh.basic.base.R;
 import top.tangyh.basic.base.controller.SuperController;
 import top.tangyh.basic.interfaces.echo.EchoService;
-import top.tangyh.lamp.alarm.dto.AlarmDefinitionPageQuery;
-import top.tangyh.lamp.alarm.dto.AlarmDefinitionSaveDTO;
-import top.tangyh.lamp.alarm.dto.AlarmDefinitionUpdateDTO;
-import top.tangyh.lamp.alarm.entity.AlarmDefinition;
-import top.tangyh.lamp.alarm.service.AlarmDefinitionService;
+import top.tangyh.lamp.task.dto.TaskInfoPageQuery;
+import top.tangyh.lamp.task.dto.TaskInfoSaveDTO;
+import top.tangyh.lamp.task.dto.TaskInfoUpdateDTO;
+import top.tangyh.lamp.task.entity.TaskInfo;
+import top.tangyh.lamp.task.service.TaskInfoService;
 
 import java.util.List;
 import java.util.Map;
@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 /**
  * <p>
  * 前端控制器
- * 动态告警等级定义表
+ * AI视觉任务信息表
  * </p>
  *
  * @author leo
@@ -34,16 +34,16 @@ import java.util.stream.Collectors;
 @Slf4j
 @Validated
 @RestController
-@RequestMapping("/alarmDefinition")
-@Api(value = "AlarmDefinition", tags = "动态告警等级定义表")
-@PreAuth(enabled = false, replace = "alarm:alarmDefinition:")
-public class AlarmDefinitionController extends SuperController<AlarmDefinitionService, Long, AlarmDefinition, AlarmDefinitionPageQuery, AlarmDefinitionSaveDTO, AlarmDefinitionUpdateDTO> {
+@RequestMapping("/taskInfo")
+@Api(value = "TaskInfo", tags = "AI视觉任务信息表")
+@PreAuth(enabled = false, replace = "task:taskInfo:")
+public class TaskInfoController extends SuperController<TaskInfoService, Long, TaskInfo, TaskInfoPageQuery, TaskInfoSaveDTO, TaskInfoUpdateDTO> {
 
     @Autowired
     private EchoService echoService;
 
     @Override
-    public void handlerResult(IPage<AlarmDefinition> page) {
+    public void handlerResult(IPage<TaskInfo> page) {
         echoService.action(page);
     }
     /**
@@ -53,12 +53,12 @@ public class AlarmDefinitionController extends SuperController<AlarmDefinitionSe
      */
     @Override
     public R<Boolean> handlerImport(List<Map<String, String>> list){
-        List<AlarmDefinition> alarmDefinitionList = list.stream().map((map) -> {
-            AlarmDefinition alarmDefinition = AlarmDefinition.builder().build();
+        List<TaskInfo> taskInfoList = list.stream().map((map) -> {
+            TaskInfo taskInfo = TaskInfo.builder().build();
             //TODO 请在这里完成转换
-            return alarmDefinition;
+            return taskInfo;
         }).collect(Collectors.toList());
 
-        return R.success(baseService.saveBatch(alarmDefinitionList));
+        return R.success(baseService.saveBatch(taskInfoList));
     }
 }
