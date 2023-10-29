@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>top.tangyh.lamp</groupId>
+        <artifactId>lamp-dependencies-parent</artifactId>
+        <version>3.10.0</version>
+        <relativePath>../lamp-dependencies-parent/pom.xml</relativePath>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>lamp-biz</artifactId>
+    <name>${project.artifactId}</name>
+    <description>业务服务</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>lamp-alarm-entity</module>
+        <module>lamp-alarm-biz</module>
+        <module>lamp-alarm-controller</module>
+
+        <module>lamp-device-entity</module>
+        <module>lamp-device-biz</module>
+        <module>lamp-device-controller</module>
+
+        <module>lamp-task-entity</module>
+        <module>lamp-task-biz</module>
+        <module>lamp-task-controller</module>
+
+        <module>lamp-venue-entity</module>
+        <module>lamp-venue-biz</module>
+        <module>lamp-venue-controller</module>
+
+        <module>lamp-portrait-entity</module>
+        <module>lamp-portrait-biz</module>
+        <module>lamp-portrait-controller</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>top.tangyh.lamp</groupId>
+                <artifactId>lamp-alarm-biz</artifactId>
+                <version>${lamp-project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>top.tangyh.lamp</groupId>
+                <artifactId>lamp-alarm-controller</artifactId>
+                <version>${lamp-project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>top.tangyh.lamp</groupId>
+                <artifactId>lamp-alarm-entity</artifactId>
+                <version>${lamp-project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>top.tangyh.lamp</groupId>
+                <artifactId>lamp-device-biz</artifactId>
+                <version>${lamp-project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>top.tangyh.lamp</groupId>
+                <artifactId>lamp-device-controller</artifactId>
+                <version>${lamp-project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>top.tangyh.lamp</groupId>
+                <artifactId>lamp-device-entity</artifactId>
+                <version>${lamp-project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>top.tangyh.lamp</groupId>
+                <artifactId>lamp-task-biz</artifactId>
+                <version>${lamp-project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>top.tangyh.lamp</groupId>
+                <artifactId>lamp-task-controller</artifactId>
+                <version>${lamp-project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>top.tangyh.lamp</groupId>
+                <artifactId>lamp-task-entity</artifactId>
+                <version>${lamp-project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>top.tangyh.lamp</groupId>
+                <artifactId>lamp-venue-biz</artifactId>
+                <version>${lamp-project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>top.tangyh.lamp</groupId>
+                <artifactId>lamp-venue-controller</artifactId>
+                <version>${lamp-project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>top.tangyh.lamp</groupId>
+                <artifactId>lamp-venue-entity</artifactId>
+                <version>${lamp-project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>top.tangyh.lamp</groupId>
+                <artifactId>lamp-portrait-biz</artifactId>
+                <version>${lamp-project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>top.tangyh.lamp</groupId>
+                <artifactId>lamp-portrait-controller</artifactId>
+                <version>${lamp-project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>top.tangyh.lamp</groupId>
+                <artifactId>lamp-portrait-entity</artifactId>
+                <version>${lamp-project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

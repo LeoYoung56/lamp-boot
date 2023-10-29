@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.tangyh.lamp.alarm.dao.AlarmDefinitionMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="top.tangyh.lamp.alarm.entity.AlarmDefinition">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="created_by" jdbcType="BIGINT" property="createdBy"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="updated_by" jdbcType="BIGINT" property="updatedBy"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="range_id" jdbcType="BIGINT" property="rangeId"/>
+        <result column="cron_expression" jdbcType="VARCHAR" property="cronExpression"/>
+        <result column="alarm_type" jdbcType="VARCHAR" property="alarmType"/>
+        <result column="severity_id" jdbcType="INTEGER" property="severityId"/>
+        <result column="description" jdbcType="LONGVARCHAR" property="description"/>
+        <result column="confirmable_person_type_id" jdbcType="BIGINT" property="confirmablePersonTypeId"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,created_by,create_time,updated_by,update_time,
+        range_id, cron_expression, alarm_type, severity_id, description, confirmable_person_type_id
+    </sql>
+
+</mapper>

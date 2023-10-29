@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.tangyh.lamp.alarm.dao.AlarmInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="top.tangyh.lamp.alarm.entity.AlarmInfo">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="created_by" jdbcType="BIGINT" property="createdBy"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="updated_by" jdbcType="BIGINT" property="updatedBy"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="alarm_definition_id" jdbcType="BIGINT" property="alarmDefinitionId"/>
+        <result column="device_id" jdbcType="BIGINT" property="deviceId"/>
+        <result column="task_id" jdbcType="BIGINT" property="taskId"/>
+        <result column="alarm_type" jdbcType="VARCHAR" property="alarmType"/>
+        <result column="alarm_time" jdbcType="BIGINT" property="alarmTime"/>
+        <result column="description" jdbcType="LONGVARCHAR" property="description"/>
+        <result column="severity_id" jdbcType="BIGINT" property="severityId"/>
+        <result column="confirmation_person_id" jdbcType="BIGINT" property="confirmationPersonId"/>
+        <result column="confirmation_time" jdbcType="BIGINT" property="confirmationTime"/>
+        <result column="video_url" jdbcType="VARCHAR" property="videoUrl"/>
+        <result column="screenshot_url" jdbcType="VARCHAR" property="screenshotUrl"/>
+        <result column="screenshot_description" jdbcType="LONGVARCHAR" property="screenshotDescription"/>
+        <result column="video_description" jdbcType="LONGVARCHAR" property="videoDescription"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,created_by,create_time,updated_by,update_time,
+        alarm_definition_id, device_id, task_id, alarm_type, alarm_time, description, severity_id, confirmation_person_id, confirmation_time, video_url, screenshot_url, screenshot_description, video_description
+    </sql>
+
+</mapper>

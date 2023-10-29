@@ -1,11 +1,11 @@
 CREATE TABLE a_venue_info
 (
-    venue_id          BIGINT                      NOT NULL PRIMARY KEY COMMENT '场地ID',
+    id          BIGINT                      NOT NULL PRIMARY KEY COMMENT '场地ID',
     venue_name        VARCHAR(100)                NOT NULL COMMENT '场地名称',
     venue_type        VARCHAR(50)                 NULL COMMENT '场地类型, 如某某船，某某甲板',
     venue_description TEXT                        NULL COMMENT '场地描述',
     venue_address     VARCHAR(255)                NULL COMMENT '场地地址',
-    is_movable        VARCHAR(20)             default 'false' NULL COMMENT '场地是否可移动',
+    is_movable        VARCHAR(20) default 'false' NULL COMMENT '场地是否可移动',
     move_state        VARCHAR(50)                 NULL COMMENT '场地移动状态，移动中，静止',
     is_place          BOOLEAN                     NULL COMMENT '场地是否为场所',
     hierarchy_level   VARCHAR(255)                NULL COMMENT '场地层级',
@@ -19,12 +19,12 @@ CREATE TABLE a_venue_info
     updated_by        BIGINT                      NULL COMMENT '更新者',
     update_time       datetime    DEFAULT NULL COMMENT '更新时间',
     tenant_code       varchar(20) default ''      not null comment '租户编码',
-    constraint uk_venue_id unique (tenant_code, venue_id)
+    constraint uk_venue_id unique (tenant_code, id)
 ) COMMENT '场地信息表';
 
 CREATE TABLE a_device_info
 (
-    device_id          BIGINT       NOT NULL PRIMARY KEY COMMENT '设备ID',
+    id          BIGINT       NOT NULL PRIMARY KEY COMMENT '设备ID',
     device_name        VARCHAR(255) NOT NULL COMMENT '设备名称',
     device_type        VARCHAR(50)  NULL COMMENT '设备类型',
     location           VARCHAR(100) NULL COMMENT '设备位置',
@@ -40,12 +40,12 @@ CREATE TABLE a_device_info
     update_time        datetime          DEFAULT NULL COMMENT '更新时间',
     updated_by         BIGINT       NULL COMMENT '更新者',
     tenant_code        varchar(20)       default '' not null comment '租户编码',
-    constraint uk_device_id unique (tenant_code, device_id)
+    constraint uk_device_id unique (tenant_code, id)
 ) COMMENT '监控设备信息';
 
 CREATE TABLE a_task_definition
 (
-    task_definition_id   BIGINT                 NOT NULL PRIMARY KEY COMMENT '任务定义ID',
+    id   BIGINT                 NOT NULL PRIMARY KEY COMMENT '任务定义ID',
     task_type            VARCHAR(50)            NOT NULL COMMENT '任务类型',
     ai_module            VARCHAR(255)           NOT NULL COMMENT '算法模型',
     required_device_type VARCHAR(50)            NULL COMMENT '所需设备类型',
@@ -57,12 +57,12 @@ CREATE TABLE a_task_definition
     update_time          datetime    DEFAULT NULL COMMENT '更新时间',
     updated_by           BIGINT                 NULL COMMENT '更新者',
     tenant_code          varchar(20) default '' not null comment '租户编码',
-    constraint uk_task_definition_id unique (tenant_code, task_definition_id)
+    constraint uk_task_definition_id unique (tenant_code, id)
 ) COMMENT '任务类型表';
 
 CREATE TABLE a_task_info
 (
-    task_id          INT                    NOT NULL PRIMARY KEY COMMENT '任务ID',
+    id          INT                    NOT NULL PRIMARY KEY COMMENT '任务ID',
     task_name        VARCHAR(100)           NOT NULL COMMENT '任务名称',
     task_type_id     INT                    NULL COMMENT '任务类型',
     task_description TEXT                   NULL COMMENT '任务描述',
@@ -75,12 +75,12 @@ CREATE TABLE a_task_info
     updated_by       BIGINT                 NULL COMMENT '更新者',
     update_time      datetime    DEFAULT NULL COMMENT '更新时间',
     tenant_code      varchar(20) default '' not null comment '租户编码',
-    constraint uk_task_id unique (tenant_code, task_id)
+    constraint uk_task_id unique (tenant_code, id)
 ) COMMENT 'AI视觉任务信息表';
 
 CREATE TABLE a_alarm_info
 (
-    alarm_id               BIGINT                 NOT NULL PRIMARY KEY COMMENT '告警ID',
+    id               BIGINT                 NOT NULL PRIMARY KEY COMMENT '告警ID',
     alarm_definition_id    BIGINT                 NULL COMMENT '关联的监控设备ID',
     device_id              BIGINT                 NULL COMMENT '关联的监控设备ID',
     task_id                BIGINT                 NULL COMMENT '触发告警的任务ID',
@@ -99,12 +99,12 @@ CREATE TABLE a_alarm_info
     updated_by             BIGINT                 NULL COMMENT '更新者',
     update_time            datetime    DEFAULT NULL COMMENT '更新时间',
     tenant_code            varchar(20) default '' not null comment '租户编码',
-    constraint uk_alarm_id unique (tenant_code, alarm_id)
+    constraint uk_alarm_id unique (tenant_code, id)
 ) COMMENT '告警信息表';
 
 CREATE TABLE a_alarm_definition
 (
-    alarm_definition_id        BIGINT                 NOT NULL PRIMARY KEY COMMENT '动态告警定义ID',
+    id        BIGINT                 NOT NULL PRIMARY KEY COMMENT '动态告警定义ID',
     range_id                   BIGINT                 NULL COMMENT '范围ID，对应ES的范围，如果为空就不看位置信息直接告警',
     cron_expression            VARCHAR(255)           NULL COMMENT 'Cron时间表达式，如果为空就不看时间信息直接告警',
     alarm_type                 VARCHAR(50)            NOT NULL COMMENT '告警类型',
@@ -116,5 +116,24 @@ CREATE TABLE a_alarm_definition
     updated_by                 BIGINT                 NULL COMMENT '更新者',
     update_time                datetime    DEFAULT NULL COMMENT '更新时间',
     tenant_code                varchar(20) default '' not null comment '租户编码',
-    constraint uk_alarm_definition_id unique (tenant_code, alarm_definition_id)
+    constraint uk_alarm_definition_id unique (tenant_code, id)
 ) COMMENT '动态告警等级定义表';
+
+CREATE TABLE a_portrait_info
+(
+    id      BIGINT                 NOT NULL PRIMARY KEY COMMENT '人像ID',
+    full_image_url   VARCHAR(255)           NULL COMMENT '原图URL',
+    avatar_image_url VARCHAR(255)           NULL COMMENT '头像URL',
+    person_name      VARCHAR(100)           NULL COMMENT '人员姓名',
+    age              INT                    NULL COMMENT '年龄',
+    gender           varchar(20)            NULL COMMENT '性别, Male, Female, Other',
+    position         VARCHAR(100)           NULL COMMENT '职位',
+    phone_number     VARCHAR(20)            NULL COMMENT '电话号码',
+    description      TEXT                   NULL COMMENT '备注信息',
+    created_by       BIGINT                 NULL COMMENT '创建者',
+    create_time      datetime    DEFAULT NULL COMMENT '创建时间',
+    updated_by       BIGINT                 NULL COMMENT '更新者',
+    update_time      datetime    DEFAULT NULL COMMENT '更新时间',
+    tenant_code      varchar(20) default '' not null comment '租户编码',
+    constraint uk_portrait_info_id unique (tenant_code, id)
+) COMMENT '人像信息表';

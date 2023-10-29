@@ -50,6 +50,31 @@
             <artifactId>lamp-tenant-controller</artifactId>
             <version>${lamp-project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>top.tangyh.lamp</groupId>
+            <artifactId>lamp-alarm-controller</artifactId>
+            <version>${lamp-project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>top.tangyh.lamp</groupId>
+            <artifactId>lamp-device-controller</artifactId>
+            <version>${lamp-project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>top.tangyh.lamp</groupId>
+            <artifactId>lamp-portrait-controller</artifactId>
+            <version>${lamp-project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>top.tangyh.lamp</groupId>
+            <artifactId>lamp-task-controller</artifactId>
+            <version>${lamp-project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>top.tangyh.lamp</groupId>
+            <artifactId>lamp-venue-controller</artifactId>
+            <version>${lamp-project.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>top.tangyh.basic</groupId>

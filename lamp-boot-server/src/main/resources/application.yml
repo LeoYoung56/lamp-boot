@@ -151,6 +151,21 @@ lamp:
       activiti:
         title: 流程组件模块
         base-package: top.tangyh.lamp.activiti.controller
+      alarm:
+        title: 告警模块
+        base-package: top.tangyh.lamp.alarm.controller
+#      device:
+#        title: 设备模块
+#        base-package: top.tangyh.lamp.device.controller
+#      portrait:
+#        title: 人像模块
+#        base-package: top.tangyh.lamp.portrait.controller
+#      task:
+#        title: 任务模块
+#        base-package: top.tangyh.lamp.task.controller
+#      venue:
+#        title: 场地模块
+#        base-package: top.tangyh.lamp.venue.controller
   captcha:
     type: ARITHMETIC
     width: 158
